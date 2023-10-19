@@ -26,10 +26,6 @@ pall$
 Monty byte code files can contain blank lines (empty or made of spaces only, and any additional text after the opcode or its required argument is not taken into account:
 
 
-For the second code snippet:
-
-```plaintext
-```C
 cat -e bytecodes/001.m
 push 0 Push 0 onto the stack$
 push 1 Push 1 onto the stack$
@@ -51,7 +47,7 @@ pall This is the end of our program. Monty is awesome!
 The monty program
 ==================
 
-Usage: monty file
+Usage: monty <file>
 where file is the path to the file containing Monty byte code
 If the user does not give any file or more than one argument to your program, it prints the error message USAGE: monty file, followed by a new line, and exit with the status EXIT_FAILURE
 If, for any reason, it’s not possible to open the file, the error message Error: Can't open file <file> will be printed followed by a new line, and it exit with the status EXIT_FAILURE
