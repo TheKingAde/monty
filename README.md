@@ -9,41 +9,44 @@ Monty byte code files
 Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
 
 
-===================================
-root:~/monty$ cat -e bytecodes/000.m
+```C
+cat -e bytecodes/000.m
 push 0$
 push 1$
 push 2$
-  push 3$
-                   pall    $
-push 4$
-    push 5    $
-      push    6        $
+push 3$
 pall$
-root:~/monty$
-===================================
+push 4$
+push 5$
+push 6$
+pall$
+
+
 
 Monty byte code files can contain blank lines (empty or made of spaces only, and any additional text after the opcode or its required argument is not taken into account:
 
-=========================================
-root:~/monty$ cat -e bytecodes/001.m
+
+For the second code snippet:
+
+```plaintext
+```C
+cat -e bytecodes/001.m
 push 0 Push 0 onto the stack$
 push 1 Push 1 onto the stack$
 $
 push 2$
-  push 3$
-                   pall    $
+push 3$
+pall$
 $
 $
-                           $
+$
 push 4$
 $
-    push 5    $
-      push    6        $
+push 5$
+push 6$
 $
-pall This is the end of our program. Monty is awesome!$
-root:~/monty$
-======================================
+pall This is the end of our program. Monty is awesome!
+
 
 The monty program
 ==================
