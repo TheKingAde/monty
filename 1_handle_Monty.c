@@ -22,3 +22,13 @@ void handle_add(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	free(temp);
 }
+/**
+ * handle_nop - The opcode nop doesn't do anything.
+ * @stack: pointer to a pointer to the stack
+ * @line_number: Tracks the line number
+ */
+void handle_nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
