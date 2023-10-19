@@ -43,4 +43,5 @@ void process_line(char *line, unsigned int line_number, stack_t **stack);
 void handle_push(stack_t **stack, unsigned int line_number);
 void handle_pall(stack_t **stack, unsigned int line_number);
 int is_integer(const char *str);
+void handle_pint(stack_t **stack, unsigned int line_number);
 #endif
