@@ -14,6 +14,7 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		{"pall", handle_pall},
 		{"pint", handle_pint},
 		{"pop", handle_pop},
+		{"swap", handle_swap},
 		{NULL, NULL}
 	};
 	char *opcode = strtok(line, " \t\n");
