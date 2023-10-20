@@ -32,3 +32,21 @@ void handle_nop(stack_t **stack, unsigned int line_number)
 	(void)stack;
 	(void)line_number;
 }
+#include "monty.h"
+
+/**
+ * handle_sub - subtracts the top element from the second top element
+ * @stack: pointer to a pointer to the stack
+ * @line_number: tracks the line number
+ */
+void handle_sub(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n -= (*stack)->n;
+	handle_pop(stack, line_number);
+}
