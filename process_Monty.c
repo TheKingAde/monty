@@ -18,6 +18,8 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		{"add", handle_add},
 		{"nop", handle_nop},
 		{"sub", handle_sub},
+		{"div", handle_div},
+		{"mul", handle_mul},
 		{NULL, NULL}
 	};
 	char *opcode = strtok(line, " \t\n");
@@ -64,3 +66,4 @@ void process_file(const char *filename, stack_t **stack)
 
 	fclose(file);
 }
+

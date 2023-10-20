@@ -50,3 +50,42 @@ void handle_sub(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n -= (*stack)->n;
 	handle_pop(stack, line_number);
 }
+/**
+ * handle_div - divides the second top element of the stack by the top element
+ * @stack: pointer to a pointer to the stack
+ * @line_number: line number in the file
+ */
+void handle_div(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n /= (*stack)->n;
+	handle_pop(stack, line_number);
+}
+/**
+ * handle_mul - multiplies the second top element with the top element
+ * @stack: pointer to a pointer to the stack
+ * @line_number: tracks the number of lines
+ */
+void handle_mul(stack_t **stack, unsigned int line_number)
+{
+	if (!stack || !*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n *= (*stack)->n;
+	handle_pop(stack, line_number);
+}
+
