@@ -20,6 +20,10 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		{"sub", handle_sub},
 		{"div", handle_div},
 		{"mul", handle_mul},
+		{"mod", handle_mod},
+		{"pchar", handle_pchar},
+		{"pstr", handle_pstr},
+		{"rotl", handle_rotl},
 		{NULL, NULL}
 	};
 	char *opcode = strtok(line, " \t\n");
