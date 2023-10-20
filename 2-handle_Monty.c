@@ -99,3 +99,35 @@ void handle_rotl(stack_t **stack, unsigned int line_number)
 	first->prev = NULL;
 	*stack = first;
 }
+/**
+ * handle_rotr - rotates the stack to the bottom
+ * @stack: pointer to a pointer to the stack
+ * @line_number: tracks the line number
+ */
+void handle_rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *last;
+	stack_t *second_last;
+
+	(void)line_number;
+
+	if (!stack || !*stack || !(*stack)->next)
+	{
+		return;
+	}
+
+	last = *stack;
+	second_last = NULL;
+
+	while (last->next)
+	{
+		second_last = last;
+		last = last->next;
+	}
+
+	second_last->next = NULL;
+	last->next = *stack;
+	(*stack)->prev = last;
+	last->prev = NULL;
+	*stack = last;
+}

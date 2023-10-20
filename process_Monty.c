@@ -24,6 +24,9 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		{"pchar", handle_pchar},
 		{"pstr", handle_pstr},
 		{"rotl", handle_rotl},
+		{"rotr", handle_rotr},
+		{"stack", handle_stack},
+		{"queue", handle_queue},
 		{NULL, NULL}
 	};
 	char *opcode = strtok(line, " \t\n");

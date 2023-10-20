@@ -1,6 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define MODE_STACK 0
+#define MODE_QUEUE 1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -55,5 +58,7 @@ void handle_mod(stack_t **stack, unsigned int line_number);
 void handle_pchar(stack_t **stack, unsigned int line_number);
 void handle_pstr(stack_t **stack, unsigned int line_number);
 void handle_rotl(stack_t **stack, unsigned int line_number);
-
+void handle_rotr(stack_t **stack, unsigned int line_number);
+void handle_queue(stack_t **stack, unsigned int line_number);
+void handle_stack(stack_t **stack, unsigned int line_number);
 #endif
